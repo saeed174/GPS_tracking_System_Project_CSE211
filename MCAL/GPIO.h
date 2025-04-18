@@ -23,7 +23,7 @@ void GPIO_PORTE_Init(void);  	// Not Implemented
 void GPIO_PORTF_Init(void);  
 
 
-// Implement the function needed for GPIO
+// Implement the functions needed for GPIO
 //
 //
 //
@@ -31,10 +31,10 @@ void GPIO_PORTF_Init(void);
 
 //Input RED_LED, BLUE_LED, GREEN_LED
 void RGB_LED_SetColor(uint8_t color);
-void RGB_LED_Off();
+void RGB_LED_Off(void);
 
-//Return PRESSED or NOT_PRESSED
-uint8_t GPIO_PORTF_Input_SW1();
-uint8_t GPIO_PORTF_Input_SW2();
+//Return the status PRESSED or NOT_PRESSED
+uint8_t GPIO_PORTF_Input_SW1(void);
+uint8_t GPIO_PORTF_Input_SW2(void);
 
 #endif
