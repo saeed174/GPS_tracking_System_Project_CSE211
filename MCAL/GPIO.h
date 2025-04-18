@@ -1,0 +1,40 @@
+#ifndef GPIO_H
+#define GPIO_H
+#include <stdint.h>
+#include "tm4c123gh6pm.h"
+
+#define RED_LED     0x02
+#define BLUE_LED    0x04
+#define GREEN_LED   0x08
+
+#define SWITCH_1    0x10
+#define SWITCH_2    0x01
+
+#define PRESSED      0
+#define NOT_PRESSED  1
+
+#define GPIO_LOCK_KEY 0x4C4F434B
+
+void GPIO_PORTA_Init(void);  	// Not Implemented
+void GPIO_PORTB_Init(void);  	// Not Implemented
+void GPIO_PORTC_Init(void);		// Not Implemented
+void GPIO_PORTD_Init(void);		// Not Implemented
+void GPIO_PORTE_Init(void);  	// Not Implemented
+void GPIO_PORTF_Init(void);  
+
+
+// Implement the function needed for GPIO
+//
+//
+//
+//
+
+//Input RED_LED, BLUE_LED, GREEN_LED
+void RGB_LED_SetColor(uint8_t color);
+void RGB_LED_Off();
+
+//Return PRESSED or NOT_PRESSED
+uint8_t GPIO_PORTF_Input_SW1();
+uint8_t GPIO_PORTF_Input_SW2();
+
+#endif
