@@ -2,6 +2,7 @@
 #define GPIO_H
 #include <stdint.h>
 #include "tm4c123gh6pm.h"
+#include "BIT_MATH.h"
 
 #define RED_LED     0x02
 #define BLUE_LED    0x04
