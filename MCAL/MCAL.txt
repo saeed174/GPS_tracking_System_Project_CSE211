@@ -1,1 +1,0 @@
-Here are the drivers for the MicroController Architecture Layer or "MCAL" that interface with the Microcontroller's internal peripherals such as the "GPIO" & the "UART" drivers
