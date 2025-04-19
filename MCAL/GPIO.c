@@ -1,6 +1,4 @@
-#include "tm4c123gh6pm.h"
 #include "GPIO.h"
-#include <stdint.h>
 
 //void GPIO_PORTA_Init(void)
 //void GPIO_PORTB_Init(void)  	
