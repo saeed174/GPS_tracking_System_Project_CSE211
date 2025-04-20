@@ -14,7 +14,6 @@
 #define PRESSED      0
 #define NOT_PRESSED  1
 
-#define GPIO_LOCK_KEY 0x4C4F434B
 
 void GPIO_PORTA_Init(void);  	// Not Implemented
 void GPIO_PORTB_Init(void);  	// Not Implemented
