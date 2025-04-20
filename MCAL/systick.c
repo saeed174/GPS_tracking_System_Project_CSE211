@@ -1,5 +1,6 @@
-#include "microconfig.h"
+#include "tm4c123gh6pm.h"
 #include "systick.h"
+
 void SysTick_Init(void){
 NVIC_ST_CTRL_R = 0;				
 NVIC_ST_RELOAD_R = 0x00FFFFFF;		
