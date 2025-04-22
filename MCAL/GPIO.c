@@ -1,7 +1,54 @@
 #include "GPIO.h"
 
-//void GPIO_PORTA_Init(void)
-//void GPIO_PORTB_Init(void)  	
+
+void GPIO_PORTA_Init(void)
+{
+	// Enable clock for GPIO Port A
+    	SYSCTL_RCGCGPIO_R |= 0x01;
+    	while ((SYSCTL_PRGPIO_R & 0x01) == 0);
+	
+	//PortA Initialization Sequence
+    	GPIO_PORTA_LOCK_R = GPIO_LOCK_KEY;
+    	GPIO_PORTA_CR_R |= 0xFF;
+    	GPIO_PORTA_AFSEL_R &= ~0xFF;
+    	GPIO_PORTA_AMSEL_R &= ~0xFF;
+    	GPIO_PORTA_PCTL_R &= ~0xFFFFFFFF;
+    	GPIO_PORTA_DEN_R |= 0xFF;
+		GPIO_PORTA_PUR_R |= 0x00;
+		GPIO_PORTA_DIR_R |= 0xFF;
+}
+
+void GPIO_WritePortA(uint8_t value)
+{
+		GPIO_PORTA_DATA_R &= ~0xFF;
+		GPIO_PORTA_DATA_R |= value;
+}
+
+void GPIO_PORTB_Init(void)
+{
+	// Enable clock for GPIO Port B
+    	SYSCTL_RCGCGPIO_R |= 0x02;
+    	while ((SYSCTL_PRGPIO_R & 0x02) == 0);
+	
+	//PortB Initialization Sequence
+    	GPIO_PORTA_LOCK_R = GPIO_LOCK_KEY;
+    	GPIO_PORTA_CR_R |= 0xFF;
+    	GPIO_PORTA_AFSEL_R &= ~0xFF;
+    	GPIO_PORTA_AMSEL_R &= ~0xFF;
+    	GPIO_PORTA_PCTL_R &= ~0xFFFFFFFF;
+    	GPIO_PORTA_DEN_R |= 0xFF;
+		GPIO_PORTA_PUR_R |= 0x00;
+		GPIO_PORTA_DIR_R |= 0xFF;
+}
+
+void GPIO_WritePortB(uint8_t value)
+{
+		GPIO_PORTB_DATA_R &= ~0xFF;
+		GPIO_PORTB_DATA_R |= value;	
+}
+
+
+ 	
 //void GPIO_PORTC_Init(void)		
 //void GPIO_PORTD_Init(void)
 //void GPIO_PORTE_Init(void)  	
@@ -13,15 +60,15 @@ void GPIO_PORTF_Init(void)
     	while ((SYSCTL_PRGPIO_R & 0x20) == 0);
 	
 	//PortF Initialization Sequence
-    	GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
-    	GPIO_PORTF_CR_R |= 0x0E;
-    	GPIO_PORTF_AFSEL_R &= ~0x1F;
-    	GPIO_PORTF_AMSEL_R &= ~0x1F;
-    	GPIO_PORTF_PCTL_R &= ~0x000FFFFF;
-    	GPIO_PORTF_DEN_R |= 0x1F;
-	GPIO_PORTF_PUR_R |= 0x11;
-	GPIO_PORTF_DIR_R |= 0x0E;
-	GPIO_PORTF_DIR_R &= ~0x11;
+		GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
+		GPIO_PORTF_CR_R |= 0x0E;
+		GPIO_PORTF_AFSEL_R &= ~0x1F;
+		GPIO_PORTF_AMSEL_R &= ~0x1F;
+		GPIO_PORTF_PCTL_R &= ~0x000FFFFF;
+		GPIO_PORTF_DEN_R |= 0x1F;
+		GPIO_PORTF_PUR_R |= 0x11;
+		GPIO_PORTF_DIR_R |= 0x0E;
+		GPIO_PORTF_DIR_R &= ~0x11;
 }
 
 
