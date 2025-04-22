@@ -21,8 +21,11 @@
 
 
 void LCD_Init_AB(void); // This LCD initialization function initializes the LCD to be mounted on Ports A and B
+void LCD_DisplayShutdown(void);
 void LCD_SendData(uint8_t Data);
 void LCD_SendCommand(uint8_t Commend);
+void LCD_SendString(const uint8_t *String);
+void LCD_ClearScreen(void);
 
 
 void LCD_SendFallingEdge(void);
