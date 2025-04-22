@@ -61,7 +61,7 @@ void GPIO_PORTF_Init(void)
 	
 	//PortF Initialization Sequence
 		GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
-		GPIO_PORTF_CR_R |= 0x0E;
+		GPIO_PORTF_CR_R |= 0x1F;
 		GPIO_PORTF_AFSEL_R &= ~0x1F;
 		GPIO_PORTF_AMSEL_R &= ~0x1F;
 		GPIO_PORTF_PCTL_R &= ~0x000FFFFF;
