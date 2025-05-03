@@ -2,6 +2,10 @@
 #include <stdint.h>
 #include "UART.h"
 #include "tm4c123gh6pm.h"
+#include <string.h>
+#include "microconfig.h"
+#include <stdlib.h>
+
 
 char GPS [100];
 char GPS_GPGGA_VALUES[12][20];
@@ -92,4 +96,5 @@ void GPS_read_latitude_longitude(float *latitude , float *longitude)
             }
         }
     }
+		GPS[i] = '\0';
 }

@@ -1,5 +1,7 @@
 #include "tm4c123gh6pm.h"
 #include "systick.h"
+#include "microconfig.h"
+
 
 void SysTick_Init(void){
 NVIC_ST_CTRL_R = 0;				

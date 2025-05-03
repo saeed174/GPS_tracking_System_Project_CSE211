@@ -2,6 +2,8 @@
 #include "tm4c123gh6pm.h"
 #include "GPIO.h"
 #include <stdio.h>
+#include "microconfig.h"
+
 
 void UART0_Init(void)
 {
@@ -56,8 +58,8 @@ void UART5_Init(void)
     UART5_LCRH_R = 0x70;
     UART5_CTL_R |= 0x301;
 
-    GPIO_PORTE_AFSEL_R |= 0x03; 
-    GPIO_PORTE_PCTL_R |= (GPIO_PORTE_PCTL_R & ~0x000000FF) | 0x00000011; 
+    GPIO_PORTE_AFSEL_R |= 0x30; 
+    GPIO_PORTE_PCTL_R |= (GPIO_PORTE_PCTL_R & ~0x00FF0000) | 0x00110000; 
     GPIO_PORTE_DEN_R |= 0x03;
 }
 
