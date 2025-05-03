@@ -48,4 +48,6 @@ static const location MAP[MAP_SIZE] = {
 		
 };
 
+void search(float currentLatitude, float currentLongitude , char name_nearest_location[50]);
+
 #endif 
