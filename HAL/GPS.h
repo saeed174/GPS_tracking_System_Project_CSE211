@@ -6,6 +6,7 @@
 #define PI 3.14159265358979323846
 #define EARTH_RADIUS 6371000 // in meters
 
+
 // update to repo
 float ToDegrees(float angle);
 float ToRadians(float angle);

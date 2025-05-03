@@ -2,10 +2,11 @@
 #include <stdint.h>
 #include "UART.h"
 #include "tm4c123gh6pm.h"
+#include "microconfig.h"
 
 char GPS [100];
 char GPS_GPGGA_VALUES[12][20];
-extern uint8_t GPS_Received_Flag = 0;
+uint8_t GPS_Received_Flag = 0;
 
 float ToDegrees(float angle)
 {
@@ -40,6 +41,8 @@ float GPS_GET_DISTANCE(float Current_Latitude , float Current_Longitude , float 
 
 void GPS_read_latitude_longitude(float *latitude , float *longitude)
 {
+	while(GPS_Received_Flag == 0)
+	{
     char *token;
     int i = 0;
     char c0 = UART5_ReceiveChar();
@@ -92,4 +95,6 @@ void GPS_read_latitude_longitude(float *latitude , float *longitude)
             }
         }
     }
+	}
+	GPS_Received_Flag = 0;
 }

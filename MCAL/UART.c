@@ -2,6 +2,8 @@
 #include "tm4c123gh6pm.h"
 #include "GPIO.h"
 #include <stdio.h>
+#include "microconfig.h"
+
 
 void UART0_Init(void)
 {
@@ -12,7 +14,7 @@ void UART0_Init(void)
     while((SYSCTL_PRGPIO_R & 0x01) == 0);
 
     UART0_CTL_R &= ~0x01;
-    UART0_IBRD_R = 104;     // recalculate according to the divider
+    UART0_IBRD_R = 101;     // recalculate according to the divider
     UART0_FBRD_R = 11;     // recalculate according to the divider
     UART0_LCRH_R = 0x70;
     UART0_CTL_R |= 0x301;
@@ -51,14 +53,14 @@ void UART5_Init(void)
     while((SYSCTL_PRGPIO_R & 0x10) == 0);
 
     UART5_CTL_R &= ~0x01;
-    UART5_IBRD_R = 104;     // recalculate according to the divider
+    UART5_IBRD_R = 101;     // recalculate according to the divider
     UART5_FBRD_R = 11;     // recalculate according to the divider
     UART5_LCRH_R = 0x70;
     UART5_CTL_R |= 0x301;
 
-    GPIO_PORTE_AFSEL_R |= 0x03; 
-    GPIO_PORTE_PCTL_R |= (GPIO_PORTE_PCTL_R & ~0x000000FF) | 0x00000011; 
-    GPIO_PORTE_DEN_R |= 0x03;
+    GPIO_PORTE_AFSEL_R |= 0x30; 
+    GPIO_PORTE_PCTL_R |= (GPIO_PORTE_PCTL_R & ~0x00FF0000) | 0x00110000; 
+    GPIO_PORTE_DEN_R |= 0x30;
 }
 
 void UART5_SendChar(char c)

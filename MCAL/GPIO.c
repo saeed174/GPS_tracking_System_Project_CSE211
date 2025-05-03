@@ -1,4 +1,5 @@
 #include "GPIO.h"
+#include "microconfig.h"
 
 
 void GPIO_PORTA_Init(void)
@@ -31,14 +32,14 @@ void GPIO_PORTB_Init(void)
     	while ((SYSCTL_PRGPIO_R & 0x02) == 0);
 	
 	//PortB Initialization Sequence
-    	GPIO_PORTA_LOCK_R = GPIO_LOCK_KEY;
-    	GPIO_PORTA_CR_R |= 0xFF;
-    	GPIO_PORTA_AFSEL_R &= ~0xFF;
-    	GPIO_PORTA_AMSEL_R &= ~0xFF;
-    	GPIO_PORTA_PCTL_R &= ~0xFFFFFFFF;
-    	GPIO_PORTA_DEN_R |= 0xFF;
-		GPIO_PORTA_PUR_R |= 0x00;
-		GPIO_PORTA_DIR_R |= 0xFF;
+    	GPIO_PORTB_LOCK_R = GPIO_LOCK_KEY;
+    	GPIO_PORTB_CR_R |= 0xFF;
+    	GPIO_PORTB_AFSEL_R &= ~0xFF;
+    	GPIO_PORTB_AMSEL_R &= ~0xFF;
+    	GPIO_PORTB_PCTL_R &= ~0xFFFFFFFF;
+    	GPIO_PORTB_DEN_R |= 0xFF;
+			GPIO_PORTB_PUR_R |= 0x00;
+			GPIO_PORTB_DIR_R |= 0xFF;
 }
 
 void GPIO_WritePortB(uint8_t value)
@@ -70,6 +71,21 @@ void GPIO_PORTF_Init(void)
 		GPIO_PORTF_DIR_R |= 0x0E;
 		GPIO_PORTF_DIR_R &= ~0x11;
 }
+
+void GPIO_PORTE_Init(void)
+{
+    // Enable clock for GPIO Port E
+    SYSCTL_RCGCGPIO_R |= 0x10;                  // Enable Port E clock (bit 4)
+    while ((SYSCTL_PRGPIO_R & 0x10) == 0);      // Wait until Port E is ready
+
+    // Port E Initialization Sequence
+    GPIO_PORTE_AFSEL_R &= ~0x3F;                // Disable alternate functions on PE0-PE5
+    GPIO_PORTE_AMSEL_R &= ~0x3F;                // Disable analog mode on PE0-PE5
+    GPIO_PORTE_PCTL_R &= ~0xFFFFFFFF;           // Clear PCTL register (PE0-PE5)
+    GPIO_PORTE_DEN_R |= 0x3F;                   // Enable digital function on PE0-PE5
+    GPIO_PORTE_DIR_R |= 0x3F;                   // Set PE0-PE5 as output (change as needed)
+}
+
 
 
 void RGB_LED_SetColor(uint8_t color)
