@@ -16,6 +16,7 @@
 
 
 void GPIO_PORTA_Init(void);  	
+void GPIO_PORTA_NVIC_Init(void); // should call GPIO_PORTA_Init() before it
 void GPIO_WritePortA(uint8_t Data);
 void GPIO_PORTB_Init(void);  	
 void GPIO_WritePortB(uint8_t Data);

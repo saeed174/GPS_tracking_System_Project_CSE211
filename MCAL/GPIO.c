@@ -19,6 +19,7 @@ void GPIO_PORTA_Init(void)
 		GPIO_PORTA_DIR_R |= 0xFF;
 }
 
+
 void GPIO_WritePortA(uint8_t value)
 {
 		GPIO_PORTA_DATA_R &= ~0xFF;
@@ -70,6 +71,18 @@ void GPIO_PORTF_Init(void)
 		GPIO_PORTF_PUR_R |= 0x11;
 		GPIO_PORTF_DIR_R |= 0x0E;
 		GPIO_PORTF_DIR_R &= ~0x11;
+}
+
+void GPIO_PORTF_NVIC_Init(void)
+{
+	GPIO_PORTF_ICR_R = 0x10;
+	GPIO_PORTF_IM_R = 0x10;
+	GPIO_PORTF_IS_R &= ~0x10;
+	GPIO_PORTF_IBE_R &= ~0x10;
+	GPIO_PORTF_IEV_R &= ~0x10;
+	NVIC_EN0_R = (1 << 30);
+	NVIC_PRI7_R &= ~0x00FF0000;
+	Enable_Interrupts();
 }
 
 void GPIO_PORTE_Init(void)

@@ -14,6 +14,9 @@ int main(void)
 	UART0_Init();
 	UART5_Init();
 	SysTick_Init();
+	GPIO_PORTB_Init();
+	GPIO_PORTF_Init();
+	GPIO_PORTF_NVIC_Init();
   while(1)
   {
 		GPS_read_latitude_longitude(&currentlatitude , &currentlongitude);
@@ -39,4 +42,17 @@ int main(void)
 		
   }
 
+}
+
+void GPIOF_Handler(void)
+{
+	GPIO_PORTF_ICR_R = 0x10;
+	/*
+			Write LCD Code Here
+								|
+								|
+								v
+	*/
+	
+	
 }
