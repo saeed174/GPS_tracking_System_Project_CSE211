@@ -1,6 +1,6 @@
-#include <stdint.h>
 #include "microconfig.h"
-//#include ""
+
+
 char x;
 char longt[25];
 char latt[25];
@@ -11,12 +11,15 @@ char name_nearest_location[50];
 
 int main(void)
 {
-	UART0_Init();
+	//UART0_Init();
 	UART5_Init();
 	SysTick_Init();
-	GPIO_PORTB_Init();
+	LCD_Init_AB();
 	GPIO_PORTF_Init();
 	GPIO_PORTF_NVIC_Init();
+	
+	
+	
   while(1)
   {
 		GPS_read_latitude_longitude(&currentlatitude , &currentlongitude);
@@ -54,5 +57,7 @@ void GPIOF_Handler(void)
 								v
 	*/
 	
+	LCD_ClearScreen();
+	LCD_SendString(name_nearest_location); //Made for small strings with <=16 characters
 	
 }

@@ -11,8 +11,11 @@
 #define SWITCH_1    0x10
 #define SWITCH_2    0x01
 
-#define PRESSED      0
-#define NOT_PRESSED  1
+#define PRESSED     	0
+#define NOT_PRESSED  	1
+
+#define HIGH 	1
+#define LOW 	0
 
 
 void GPIO_PORTA_Init(void);  	
@@ -24,7 +27,9 @@ void GPIO_PORTF_Init(void);
 
 void GPIO_WritePortA(uint8_t Data);
 void GPIO_WriteHighNibblePortA(uint8_t value);
+
 void GPIO_WritePortB(uint8_t Data);
+void GPIO_SetPinPortB(uint8_t Pin_number, uint8_t status);
 
 
 // Implement the functions needed for GPIO

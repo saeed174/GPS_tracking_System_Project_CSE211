@@ -94,6 +94,20 @@ void GPIO_WritePortB(uint8_t value)
 }
 
 
+void GPIO_SetPinPortB(uint8_t Pin_number, uint8_t status)
+{
+	if(status == HIGH)
+	{
+		GPIO_PORTB_DATA_R |= (1<<Pin_number);
+	}
+	
+	else if(status == LOW)
+	{
+		GPIO_PORTB_DATA_R &= ~(1<<Pin_number);
+	}
+}
+
+
 /****************************************************************************************/
 
 
