@@ -35,31 +35,6 @@ void GPIO_PORTB_Init(void)
 			GPIO_PORTB_PUR_R |= 0x00;
 			GPIO_PORTB_DIR_R |= 0xFF;
 }
-
-
-
-void GPIO_WritePortA(uint8_t value)
-{
-	GPIO_PORTA_DATA_R &= ~0xFF;
-	GPIO_PORTA_DATA_R |= value;
-}
-
-void GPIO_WriteHighNibblePortA(uint8_t value)
-{
-    value <<= 4;
-
-    GPIO_PORTA_DATA_R &= 0x0F;
-    GPIO_PORTA_DATA_R |= value;
-}
-
-
-void GPIO_WritePortB(uint8_t value)
-{
-	GPIO_PORTB_DATA_R &= ~0xFF;
-	GPIO_PORTB_DATA_R |= value;	
-}
-
-
  	
 //void GPIO_PORTC_Init(void)		
 //void GPIO_PORTD_Init(void)
@@ -94,6 +69,28 @@ void GPIO_PORTF_Init(void)
 		GPIO_PORTF_PUR_R |= 0x11;
 		GPIO_PORTF_DIR_R |= 0x0E;
 		GPIO_PORTF_DIR_R &= ~0x11;
+}
+
+
+void GPIO_WritePortA(uint8_t value)
+{
+	GPIO_PORTA_DATA_R &= ~0xFF;
+	GPIO_PORTA_DATA_R |= value;
+}
+
+void GPIO_WriteHighNibblePortA(uint8_t value)
+{
+    value <<= 4;
+
+    GPIO_PORTA_DATA_R &= 0x0F;
+    GPIO_PORTA_DATA_R |= value;
+}
+
+
+void GPIO_WritePortB(uint8_t value)
+{
+	GPIO_PORTB_DATA_R &= ~0xFF;
+	GPIO_PORTB_DATA_R |= value;	
 }
 
 
