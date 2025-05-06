@@ -19,16 +19,18 @@ void search(float currentLatitude, float currentLongitude , char name_nearest_lo
 
     // Loop through all locations in the map to find the nearest one
 		int i = 0;
-    for (; i < 14 ; i++) {
+    for (; i < MAP_SIZE ; i++) {
         
-        distance = GPS_GET_DISTANCE(
+        distance = GPS_GET_DISTANCE
+		(
             currentLatitude, 
             currentLongitude, 
             MAP[i].Latitude, 
             MAP[i].Longitude
         );
 
-        if (distance <= minDistance) {
+        if (distance <= minDistance)
+		{
             minDistance = distance;
             nearestIndex = i;
         }
