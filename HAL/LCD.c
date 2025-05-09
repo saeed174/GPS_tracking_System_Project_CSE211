@@ -98,8 +98,8 @@ void LCD_ClearScreen(void)
 
 void LCD_SendFallingEdge(void)
 {
-	GPIO_SetPinPortB(EN_PIN, HIGH);
+	GPIO_SetPinPortB(2, HIGH);
 	delay_ms(1);
-	GPIO_SetPinPortB(EN_PIN, LOW);
+	GPIO_SetPinPortB(2, LOW);
 	delay_ms(1);
 }

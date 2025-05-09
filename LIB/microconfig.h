@@ -16,7 +16,7 @@
 
 
 
-#define F_CPU 80000000 /* Internal frequency 80 MHz */
+#define F_CPU 16000000 /* Internal frequency 16 MHz */
 #define CSV 1
 
 /* Enable IRQ Interrupts by clearing the I bit in the PRIMASK */

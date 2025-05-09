@@ -10,7 +10,7 @@
 
 #define RS_PIN 	0
 #define RW_PIN 	1 //Shorted to GND	"No Read operations"
-#define EN_PIN 	2
+#define En_PIN 	2
 
 //D4 	-> A4
 //D5 	-> A5
