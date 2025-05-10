@@ -1,7 +1,7 @@
 #ifndef Map_H
 #define Map_H
 
-#define NAME_MAX_LENGTH 50  /*size of name of the location*/
+#define NAME_MAX_LENGTH 16  /*size of name of the location*/
 
 #define MAP_SIZE 14       /* num of locations*/
 
@@ -22,13 +22,13 @@ static const location MAP[MAP_SIZE] = {
 		
     { "HALL_C & D", 3003.8286132813f, 3116.8378906250f },
 		
-		{ "Architecture Department Building", 3003.8525390625f, 3116.8178710938f },
+		{ "Architecture", 3003.8525390625f, 3116.8178710938f },
 		
-		{ "Engineering College Mosque", 3003.8867187500f, 3116.8051757813f },
+		{ "Mosque", 3003.8867187500f, 3116.8051757813f },
 		
 		{ "Playground",3006.376495176123f, 3127.954399074193f }, //Not updated
 		
-		{ "mechanical workshop",30064.06005290846f, 3127.8882152802797f }, //Not updated
+		{ "meca workshop",30064.06005290846f, 3127.8882152802797f }, //Not updated
 		
 		{ "Luban Workshop",3006.3415604696043f, 3127.9609375152308f }, //Not updated
 		
@@ -42,7 +42,7 @@ static const location MAP[MAP_SIZE] = {
 		
 		{ "Palestine Hall",3006.519417419859f, 3127.8602358352384f }, //Not updated
 		
-		{ "Kharasana building",3003.8659667969f, 3116.6779785156f },
+		{ "Kharasana",3003.8659667969f, 3116.6779785156f },
 		
 		{ "EL_NAFORA",3006.5585244427574f, 3127.8404414635386f }, //Not updated
 		
