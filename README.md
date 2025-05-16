@@ -91,8 +91,8 @@ It utilizes an **ARM Cortex-M4** based microcontroller (TM4C123 - Tiva C Series)
 - Power via USB  
 
 ### 💻 Flashing & Running
-1. Clone the repository:
 ```bash
+1. Clone the repository:
 git clone https://github.com/saeed174/GPS_tracking_System_Project_CSE211.git
 
 2. Open the project in your IDE (Keil/CCS).
