@@ -53,19 +53,19 @@ It utilizes an **ARM Cortex-M4** based microcontroller (TM4C123 - Tiva C Series)
 
 ## 🗂️ File Structure
 
-GPS_Tracking_System_Project_CSE211/
-├── src/
-│   ├── main.c                  # Main application logic
-│   ├── gps.c / gps.h           # GPS driver files
-│   ├── uart.c / uart.h         # UART communication handlers
-│   ├── lcd.c / lcd.h           # LCD driver (4-bit mode)
-│   ├── gpio.c / gpio.h         # GPIO initialization and drivers
-│   ├── map.h                   # Registered faculty locations
-│   └── microconfig.c / .h      # Microcontroller configuration
-│
-├── REPORT.pdf                  # Final report PDF
-├── README.md                   # Project documentation (this file)
-└── LICENSE                     # Open-source license (MIT)
+-GPS_Tracking_System_Project_CSE211/
+- ├── src/
+- │   ├── main.c                  # Main application logic
+- │   ├── gps.c / gps.h           # GPS driver files
+- │   ├── uart.c / uart.h         # UART communication handlers
+- │   ├── lcd.c / lcd.h           # LCD driver (4-bit mode)
+- │   ├── gpio.c / gpio.h         # GPIO initialization and drivers
+- │   ├── map.h                   # Registered faculty locations
+- │   └── microconfig.c / .h      # Microcontroller configuration
+- │
+- ├── REPORT.pdf                  # Final report PDF
+- ├── README.md                   # Project documentation (this file)
+- └── LICENSE                     # Open-source license (MIT)
 
 
 ---
