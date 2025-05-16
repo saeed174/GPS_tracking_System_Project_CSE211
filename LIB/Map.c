@@ -21,13 +21,7 @@ void search(float currentLatitude, float currentLongitude , char name_nearest_lo
 		int i = 0;
     for (; i < MAP_SIZE ; i++) {
         
-        distance = GPS_GET_DISTANCE
-		(
-            currentLatitude, 
-            currentLongitude, 
-            MAP[i].Latitude, 
-            MAP[i].Longitude
-        );
+        distance = GPS_GET_DISTANCE(currentLatitude, currentLongitude, MAP[i].Latitude, MAP[i].Longitude);
 
         if (distance <= minDistance)
 		{

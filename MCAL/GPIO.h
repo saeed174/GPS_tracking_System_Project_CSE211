@@ -22,14 +22,12 @@
 
 
 void GPIO_PORTA_Init(void);  	
-void GPIO_PORTF_NVIC_Init(void); // should call GPIO_PORTA_Init() before it
-void GPIO_WritePortF(uint8_t Data);
+void GPIO_PORTF_NVIC_Init(void); // should call GPIO_PORTF_Init() before it
+void GPIO_WritePortF(uint8_t Data);/////
 void GPIO_PORTB_Init(void);
-void GPIO_SetInit(void);
+void GPIO_SetInit(void);/////
 
-void GPIO_PORTC_Init(void);		// Not Implemented
-void GPIO_PORTD_Init(void);		// Not Implemented
-void GPIO_PORTE_Init(void);  	// Not Implemented
+void GPIO_PORTE_Init(void); 
 void GPIO_PORTF_Init(void);  
 
 void GPIO_WritePortA(uint8_t Data);
@@ -39,11 +37,6 @@ void GPIO_WritePortB(uint8_t Data);
 void GPIO_SetPinPortB(uint8_t Pin_number, uint8_t status);
 
 
-// Implement the functions needed for GPIO
-//
-//
-//
-//
 
 void BUZZ_PortB(uint8_t Pin_number, uint8_t status);
 

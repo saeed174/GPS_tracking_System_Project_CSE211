@@ -47,13 +47,7 @@ void GPIO_WritePortB(uint8_t value)
 {
 		GPIO_PORTB_DATA_R &= ~0xFF;
 		GPIO_PORTB_DATA_R |= value;	
-}
-
-
- 	
-//void GPIO_PORTC_Init(void)		
-//void GPIO_PORTD_Init(void)
-//void GPIO_PORTE_Init(void)  	
+} 	
 
 void GPIO_PORTF_Init(void)
 {
